@@ -23,5 +23,5 @@ object Main extends App {
   println(person1)
   println(person2)
   
-  println(s"Total persons created: ${Person.getCount}") // Output: Total persons created: 2
+  println(s"Total persons created: ${Person.getCount}")
 }
