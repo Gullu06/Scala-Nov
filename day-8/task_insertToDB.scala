@@ -14,7 +14,7 @@ object DatabaseExample {
         // Establish the connection
         val url = "jdbc:mysql://scaladb.mysql.database.azure.com:3306/Priyanshi"
         val username = "mysqladmin"
-        val password = "Password@12345"
+        val password = "XXXXXXXXX"
 
         // Implicit conversion from Tuple to Candidate
         implicit def tupleToCandidate(candidate: (Int, String, String)): Candidate = {
@@ -37,11 +37,10 @@ object DatabaseExample {
 (47, "Ursula", "Arlington"),(48, "Victor", "New Orleans"),(49, "Wade", "Wichita"),(50, "Xena", "Cleveland")
 )
 
-        // Create the connection
+        // Creating the connection
         val connection: Connection = DriverManager.getConnection(url, username, password)
 
         try {
-            // Create a statement
             val statement: Statement = connection.createStatement()
 
             // Create table SQL
@@ -57,7 +56,7 @@ object DatabaseExample {
             statement.execute(createTableSQL)
             println("Table created successfully.")
 
-            // Prepare the insert statement
+            // Preparing the insert statement
             val insertSQL = "INSERT INTO candidates (sno, name, city) VALUES (?, ?, ?)"
             val preparedStatement: PreparedStatement = connection.prepareStatement(insertSQL)
 
