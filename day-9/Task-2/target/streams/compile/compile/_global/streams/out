@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/priyanshichouhan/bootcamp24/day-9/Task-2/src/main/scala/CloudListener.scala:8:70: value createConsumer is not a member of object KafkaConsumerFactory[0m
+[0m[[0m[31merror[0m] [0m[0m  val consumer: KafkaConsumer[String, String] = KafkaConsumerFactory.createConsumer("cloud-group")[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/priyanshichouhan/bootcamp24/day-9/Task-2/src/main/scala/NetworkListener.scala:8:70: value createConsumer is not a member of object KafkaConsumerFactory[0m
+[0m[[0m[31merror[0m] [0m[0m  val consumer: KafkaConsumer[String, String] = KafkaConsumerFactory.createConsumer("network-group")[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
