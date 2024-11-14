@@ -41,4 +41,8 @@ class GuestRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implic
   def updateGuestsStatusByRoomNo(roomNo: Int, status: String): Future[Int] = db.run {
     guests.filter(_.roomNo === roomNo).map(_.guestStatus).update(status)
   }
+
+  def getActiveGuests: Future[Seq[Guest]] = db.run {
+    guests.filter(_.guestStatus === "ACTIVE").result
+  }
 }
