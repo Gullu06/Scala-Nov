@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+
+# Home page
+GET     /                           controllers.HomeController.index()
+
+# Visitor check-in
+POST    /checkin                    controllers.CheckInController.checkInVisitor()
+
+# Visitor check-out
+POST    /checkout                   controllers.CheckoutController.checkoutVisitor()
+
+# Static assets
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
