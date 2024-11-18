@@ -3,17 +3,23 @@ package scheduler
 import models.{GuestDao, MenuDAO}
 import utils.MailUtil.composeAndSendEmailAllGuests
 
-import java.util.concurrent.TimeUnit
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.duration.Duration
-import scala.concurrent.{Await, ExecutionContext}
+import scala.concurrent.{ExecutionContext, Future}
+import scala.util.{Failure, Success}
 
 @Singleton
 class GuestService @Inject()(guestRepository: GuestDao, menuDao: MenuDAO)(implicit ec: ExecutionContext) {
 
   def fetchGuestListAndSendMenu(): Unit = {
-    val menuList = Await.result(menuDao.list(), Duration.apply(3, TimeUnit.SECONDS))
-    guestRepository.findActiveGuests().map(composeAndSendEmailAllGuests(_, menuList))
-
+    menuDao.list().flatMap { menuList =>
+      guestRepository.findActiveGuests().map { guestList =>
+        composeAndSendEmailAllGuests(guestList, menuList)
+      }
+    }.onComplete {
+      case Success(_) => // Log success or add additional actions if needed
+      case Failure(exception) =>
+        // Log the exception or handle it appropriately
+        println(s"Error occurred while sending menu to guests: ${exception.getMessage}")
+    }
   }
 }
