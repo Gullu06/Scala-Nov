@@ -10,7 +10,9 @@ import scala.util.{Failure, Success, Try}
 @Singleton
 class KafkaProducerService @Inject()(config: Configuration)(implicit ec: ExecutionContext) extends Logging {
 
-  private val bootstrapServers = config.get[String]("kafka.bootstrap.servers")
+  val bootstrapServers = sys.env.get("BOOTSTRAP_SERVER").getOrElse(config.get[String]("kafka.bootstrap.servers"))
+
+//  private val bootstrapServers = config.get[String]("kafka.bootstrap.servers")bootstrapServers
   private val topic = config.get[String]("kafka.topic")
 
   // Kafka producer properties

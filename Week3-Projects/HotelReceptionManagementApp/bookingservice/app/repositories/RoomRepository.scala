@@ -12,45 +12,45 @@ class RoomRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
   import profile.api._
 
   private class RoomTable(tag: Tag) extends Table[Room](tag, "Room") {
-    def roomID = column[Int]("RoomID", O.PrimaryKey)
-    def roomNo = column[Int]("RoomNo")
-    def floorNo = column[Int]("Floor_no")
-    def roomType = column[String]("Room_type")
-    def roomStatus = column[String]("Room_status")
-    def price = column[Double]("Price")
+    def room_id = column[Int]("room_id", O.PrimaryKey)
+    def room_no = column[Int]("room_no")
+    def floor_no = column[Int]("floor_no")
+    def room_type = column[String]("room_type")
+    def room_status = column[String]("room_status")
+    def price = column[Double]("price")
 
-    def * = (roomID, roomNo, floorNo, roomType, roomStatus, price) <> ((Room.apply _).tupled, Room.unapply)
+    def * = (room_id, room_no, floor_no, room_type, room_status, price) <> ((Room.apply _).tupled, Room.unapply)
   }
 
   private val rooms = TableQuery[RoomTable]
 
   // Method to get all available rooms by type
-  def getAvailableRoomsByType(roomType: String): Future[Seq[Room]] = db.run {
+  def getAvailableRoomsByType(room_type: String): Future[Seq[Room]] = db.run {
     rooms
-      .filter(room => room.roomStatus === "AVAILABLE" && room.roomType === roomType)
+      .filter(room => room.room_status === "AVAILABLE" && room.room_type === room_type)
       .result
   }
 
   // Method to update room status by RoomID
-  def updateRoomStatusById(roomId: Int, status: String): Future[Int] = db.run {
-    rooms.filter(_.roomID === roomId).map(_.roomStatus).update(status)
+  def updateRoomStatusById(room_id: Int, status: String): Future[Int] = db.run {
+    rooms.filter(_.room_id === room_id).map(_.room_status).update(status)
   }
 
   // Method to update room status by RoomNo
-  def updateRoomStatusByRoomNo(roomNo: Int, status: String): Future[Int] = db.run {
-    rooms.filter(_.roomNo === roomNo).map(_.roomStatus).update(status)
+  def updateRoomStatusByRoomNo(room_no: Int, status: String): Future[Int] = db.run {
+    rooms.filter(_.room_no === room_no).map(_.room_status).update(status)
   }
 
-  def getRoomIdByRoomNo(roomNo: Int): Future[Option[Int]] = db.run {
-    rooms.filter(_.roomNo === roomNo).filter(_.roomStatus === "AVAILABLE").map(_.roomID).result.headOption
+  def getRoomIdByRoomNo(room_no: Int): Future[Option[Int]] = db.run {
+    rooms.filter(_.room_no === room_no).filter(_.room_status === "AVAILABLE").map(_.room_id).result.headOption
   }
 
   // Method to update the room status to OCCUPIED
-  def updateRoomStatus(roomNo: Int, status: String = "OCCUPIED"): Future[Int] = db.run {
-    rooms.filter(_.roomNo === roomNo).map(_.roomStatus).update(status)
+  def findRoomStatusByRoomNo(room_no: Int, status: String = "OCCUPIED"): Future[Int] = db.run {
+    rooms.filter(_.room_no === room_no).map(_.room_status).update(status)
   }
 
-  def getRoomNoById(roomId: Int): Future[Option[Int]] = db.run {
-    rooms.filter(_.roomID === roomId).map(_.roomNo).result.headOption
+  def getRoomNoById(room_id: Int): Future[Option[Int]] = db.run {
+    rooms.filter(_.room_id === room_id).map(_.room_no).result.headOption
   }
 }

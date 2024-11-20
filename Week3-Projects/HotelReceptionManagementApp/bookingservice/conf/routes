@@ -5,11 +5,10 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index()
-GET   /rooms/available/:roomType    controllers.RoomController.getAvailableRoomsByType(roomType: String)
+GET   /rooms/available/:room_type    controllers.RoomController.getAvailableRoomsByType(room_type: String)
 POST   /rooms/allocate              controllers.RoomController.allocateRoom
 POST   /booking/checkout   controllers.RoomController.checkoutGuest
 GET   /test/trigger-cron   controllers.RoomController.triggerRoomStatusUpdate
-GET     /guests/active               controllers.GuestController.getActiveGuests
 
 
 

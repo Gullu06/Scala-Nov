@@ -23,15 +23,25 @@ class MailSenderActor extends Actor {
     properties.put("mail.smtp.ssl.trust", "smtp.gmail.com")
     properties.put("mail.smtp.ssl.protocols", "TLSv1.2")
 
+    // Retrieve authentication details from environment variables
+    val auth_mail = sys.env.get("auth_dets")
+    val auth_pass = sys.env.get("pass")
+
+    // Ensure environment variables are set
+    if (auth_mail.isEmpty || auth_pass.isEmpty) {
+      println("[MailSenderActor] Error: Missing environment variables 'auth_dets' or 'pass'.")
+      throw new IllegalStateException("Missing required environment variables for email authentication.")
+    }
+
     val session = Session.getInstance(properties, new Authenticator() {
       override protected def getPasswordAuthentication =
-        new PasswordAuthentication("priyanshichouhan2908@gmail.com", "imvv uvhc njwx wvdc") // Replace with actual credentials
+        new PasswordAuthentication(auth_mail.get, auth_pass.get)
     })
 
     try {
       val message = new MimeMessage(session)
-      message.setFrom(new InternetAddress("priyanshichouhan2908@gmail.com", "Visitor Management System")) // Sender's email
-      message.setRecipient(Message.RecipientType.TO, new InternetAddress(email.email)) // Single recipient
+      message.setFrom(new InternetAddress(auth_mail.get, "Visitor Management System")) // Sender's email
+      message.setRecipient(Message.RecipientType.TO, new InternetAddress(email.email)) // Recipient's email
       message.setSubject(email.subject)
       message.setText(email.body)
 
@@ -49,4 +59,3 @@ object MailSenderActorSystem {
   val system = akka.actor.ActorSystem("MailSenderActorSystem")
   val mailSenderActor = system.actorOf(Props[MailSenderActor], "MailSenderActor")
 }
-

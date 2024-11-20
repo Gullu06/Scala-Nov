@@ -17,35 +17,56 @@ class RoomStatusUpdateTask @Inject()(
   private val scheduler: ScheduledExecutorService = Executors.newScheduledThreadPool(1)
 
   // Schedule the cron job to run daily at midnight
-  scheduler.scheduleAtFixedRate(() => checkAndUpdateRoomAndGuestStatus(), 0, 1, TimeUnit.DAYS)
+  scheduler.scheduleAtFixedRate(() => {
+    Future(checkAndUpdateRoomAndGuestStatus()).recover {
+      case ex: Exception => logger.error("Scheduled task execution failed", ex)
+    }
+  }, 0, 1, TimeUnit.DAYS)
 
+  /** Shutdown the scheduler on application stop */
+  sys.addShutdownHook {
+    logger.info("Shutting down scheduler for RoomStatusUpdateTask")
+    scheduler.shutdown()
+    if (!scheduler.awaitTermination(10, TimeUnit.SECONDS)) {
+      scheduler.shutdownNow()
+    }
+  }
+
+  /** Check and update room and guest statuses */
   def checkAndUpdateRoomAndGuestStatus(): Future[Unit] = {
     val today = LocalDate.now()
     logger.info(s"Cron job started: Checking room and guest statuses for $today")
 
-    bookingDetailsRepository.getBookingsEndingToday(today).flatMap { bookingsEndingToday =>
-      Future.sequence(bookingsEndingToday.map { booking =>
-        for {
-          // Step 1: Get the room number for the current room ID
-          roomNoOption <- roomRepository.getRoomNoById(booking.roomId)
-
-          // Step 2: Update guest statuses to "INACTIVE" if roomNo is found
-          _ <- roomNoOption match {
-            case Some(roomNo) =>
-              guestRepository.updateGuestsStatusByRoomNo(roomNo, "INACTIVE")
-            case None =>
-              Future.successful(()) // No action needed if roomNo is None
-          }
-
-          // Step 3: Update the room status to "AVAILABLE"
-          _ <- roomRepository.updateRoomStatusById(booking.roomId, "AVAILABLE")
-        } yield ()
-      })
-    }.map { _ =>
-      logger.info("Cron job completed: Room and guest statuses updated for rooms with end_date today.")
-    }.recover {
-      case ex: Exception =>
-        logger.error("Cron job failed", ex)
+    bookingDetailsRepository.getBookingsEndingOn(today).flatMap { bookingsEndingToday =>
+      Future.sequence(bookingsEndingToday.map(updateRoomAndGuestStatus)).map { _ =>
+        logger.info("Cron job completed: Room and guest statuses updated for bookings ending today.")
+      }
+    }.recover { case ex =>
+      logger.error("Cron job failed", ex)
     }
+  }
+
+  /** Update room and guest statuses for a specific booking */
+  private def updateRoomAndGuestStatus(booking: models.BookingDetails): Future[Unit] = {
+    for {
+      // Fetch the room number for the booking
+      roomNoOption <- roomRepository.getRoomNoById(booking.room_id)
+
+      // Update guest statuses if room number is found
+      _ <- roomNoOption match {
+        case Some(room_no) =>
+          logger.info(s"Updating guest statuses to INACTIVE for room number: $room_no")
+          guestRepository.updateGuestsStatusByRoomNo(room_no, "INACTIVE")
+        case None =>
+          logger.warn(s"No room number found for room ID: ${booking.room_id}")
+          Future.successful(())
+      }
+
+      // Update the room status to AVAILABLE
+      _ <- {
+        logger.info(s"Updating room status to AVAILABLE for room ID: ${booking.room_id}")
+        roomRepository.updateRoomStatusById(booking.room_id, "AVAILABLE")
+      }
+    } yield ()
   }
 }

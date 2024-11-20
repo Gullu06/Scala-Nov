@@ -3,13 +3,13 @@ package models
 import play.api.libs.json.{Json, OFormat}
 
 case class Guest(
-                  guestId: Long,
+                  guest_id: Long,
                   name: String,
-                  roomNo: Int,
+                  room_no: Int,
                   email: String,
                   address: String,
-                  idProof: Array[Byte], // For storing the image as binary data
-                  guestStatus: String
+                  id_proof: Array[Byte], // For storing the image as binary data
+                  guest_status: String
                 )
 
 object Guest {

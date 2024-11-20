@@ -3,11 +3,11 @@ package models
 import play.api.libs.json.{Json, OFormat}
 
 case class Room(
-                 roomID: Int,
-                 roomNo: Int,
-                 floorNo: Int,
-                 roomType: String,
-                 roomStatus: String,
+                 room_id: Int,
+                 room_no: Int,
+                 floor_no: Int,
+                 room_type: String,
+                 room_status: String,
                  price: Double
                )
 

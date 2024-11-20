@@ -22,48 +22,54 @@ class RoomController @Inject()(
                                 kafkaProducerService: KafkaProducerService
                               )(implicit ec: ExecutionContext) extends BaseController with Logging {
 
-  // Trigger manual execution of the room status update task
+  /** Trigger manual execution of the room status update task */
   def triggerRoomStatusUpdate: Action[AnyContent] = Action.async {
     roomStatusUpdateTask.checkAndUpdateRoomAndGuestStatus().map { _ =>
       Ok(Json.obj("message" -> "Cron job triggered manually"))
+    }.recover { case ex =>
+      logger.error("Error triggering room status update task", ex)
+      InternalServerError(Json.obj("message" -> "Failed to trigger cron job"))
     }
   }
 
-  // API to get available rooms by type
-  def getAvailableRoomsByType(roomType: String): Action[AnyContent] = Action.async {
-    roomRepository.getAvailableRoomsByType(roomType).map { rooms =>
+  /** API to fetch available rooms by type */
+  def getAvailableRoomsByType(room_type: String): Action[AnyContent] = Action.async {
+    roomRepository.getAvailableRoomsByType(room_type).map { rooms =>
       Ok(Json.toJson(rooms))
+    }.recover { case ex =>
+      logger.error(s"Error fetching available rooms of type $room_type", ex)
+      InternalServerError(Json.obj("message" -> "Failed to fetch available rooms"))
     }
   }
 
-  // Case classes for handling JSON input
-  case class RoomCheckoutRequest(roomNo: Int)
+  // Case classes and implicits for JSON input
+  case class RoomCheckoutRequest(room_no: Int)
   implicit val roomCheckoutRequestReads: Reads[RoomCheckoutRequest] = Json.reads[RoomCheckoutRequest]
 
   case class GuestData(
                         name: String,
                         email: String,
                         address: String,
-                        idProof: String,
-                        guestStatus: String
+                        id_proof: String,
+                        guest_status: String
                       )
-
   case class GuestAllocationRequest(
-                                     roomNo: Int,
+                                     room_no: Int,
                                      guests: Seq[GuestData],
-                                     endDate: LocalDate
+                                     end_date: LocalDate
                                    )
 
   implicit val guestDataReads: Reads[GuestData] = Json.reads[GuestData]
   implicit val guestAllocationRequestReads: Reads[GuestAllocationRequest] = Json.reads[GuestAllocationRequest]
 
-  // API to allocate a room to guests
+  /** API to allocate a room to guests */
   def allocateRoom: Action[JsValue] = Action.async(parse.json) { request =>
     request.body.validate[GuestAllocationRequest].fold(
       errors => {
         val errorMessages = errors.map { case (path, validationErrors) =>
           s"${path.toString()}: ${validationErrors.map(_.message).mkString(", ")}"
-        }
+        }.mkString("; ")
+        logger.warn(s"Invalid allocation request: $errorMessages")
         Future.successful(BadRequest(Json.obj("message" -> "Invalid data", "errors" -> errorMessages)))
       },
       allocationRequest => {
@@ -71,46 +77,42 @@ class RoomController @Inject()(
           Future.successful(BadRequest(Json.obj("message" -> "Only up to 3 guests allowed per room")))
         } else {
           val guestsWithRoomNo = allocationRequest.guests.map { guestData =>
-            val idProofBytes = Base64.getDecoder.decode(guestData.idProof)
-            Guest(0, guestData.name, allocationRequest.roomNo, guestData.email, guestData.address, idProofBytes, guestData.guestStatus)
+            val idProofBytes = Base64.getDecoder.decode(guestData.id_proof)
+            Guest(0, guestData.name, allocationRequest.room_no, guestData.email, guestData.address, idProofBytes, guestData.guest_status)
           }
 
-          logger.info(s"Allocating room number: ${allocationRequest.roomNo} to ${allocationRequest.guests.size} guests.")
+          logger.info(s"Allocating room ${allocationRequest.room_no} to ${allocationRequest.guests.size} guests.")
 
-          // Step 1: Retrieve the actual RoomID from the Room table based on roomNo
-          roomRepository.getRoomIdByRoomNo(allocationRequest.roomNo).flatMap {
-            case Some(roomId) =>
-              // Step 2: Proceed with the transaction only if RoomID exists
-              val insertGuestsAndUpdateRoomAndBooking = for {
-                guestIds <- guestRepository.addGuestsAndReturnIds(guestsWithRoomNo) // Insert guests and retrieve IDs
-                _ <- roomRepository.updateRoomStatusByRoomNo(allocationRequest.roomNo, "OCCUPIED") // Update room status
+          roomRepository.getRoomIdByRoomNo(allocationRequest.room_no).flatMap {
+            case Some(room_id) =>
+              val transaction = for {
+                guestIds <- guestRepository.addGuestsAndReturnIds(guestsWithRoomNo)
+                _ <- roomRepository.updateRoomStatusByRoomNo(allocationRequest.room_no, "OCCUPIED")
                 _ <- bookingDetailsRepository.addBooking(BookingDetails(
-                  bookingId = 0, // Auto-generated
-                  guestId = guestIds.head, // Reference the first generated guest ID
-                  roomId = roomId, // Use the actual RoomID
-                  startDate = LocalDate.now(), // Set start_date to the current date
-                  endDate = allocationRequest.endDate // Use provided end_date
+                  booking_id = 0,
+                  guest_id = guestIds.head,
+                  room_id = room_id,
+                  start_date = LocalDate.now(),
+                  end_date = allocationRequest.end_date
                 ))
-              } yield ()
+              } yield guestIds
 
-              // Send each guest's details to Kafka after they are added to the database
-              val guestSendFutures = allocationRequest.guests.map { guest =>
-                kafkaProducerService.sendGuestBookingMessage(guest.name, guest.email)
-              }
-
-              insertGuestsAndUpdateRoomAndBooking.flatMap { _ =>
-                Future.sequence(guestSendFutures).map { _ =>
-                  logger.info(s"Successfully allocated room number: ${allocationRequest.roomNo}.")
-                  Ok(Json.obj("message" -> "Room allocated successfully"))
+              transaction.flatMap { guestIds =>
+                val kafkaFutures = allocationRequest.guests.map { guest =>
+                  kafkaProducerService.sendGuestBookingMessage(guest.name, guest.email)
                 }
-              }.recover {
-                case ex: Exception =>
-                  logger.error(s"Failed to allocate room number: ${allocationRequest.roomNo}", ex)
-                  InternalServerError(Json.obj("message" -> "Failed to allocate room"))
+
+                Future.sequence(kafkaFutures).map { _ =>
+                  logger.info(s"Successfully allocated room ${allocationRequest.room_no}")
+                  Ok(Json.obj("message" -> "Room allocated successfully", "guest_ids" -> guestIds))
+                }
+              }.recover { case ex =>
+                logger.error(s"Error allocating room ${allocationRequest.room_no}", ex)
+                InternalServerError(Json.obj("message" -> "Room allocation failed"))
               }
 
             case None =>
-              // If roomNo doesn't correspond to any RoomID in the database, return an error
+              logger.warn(s"Invalid room number: ${allocationRequest.room_no}")
               Future.successful(BadRequest(Json.obj("message" -> "Invalid room number")))
           }
         }
@@ -118,33 +120,34 @@ class RoomController @Inject()(
     )
   }
 
-  // API to check out guests by room number
+  /** API to check out guests by room number */
   def checkoutGuest: Action[JsValue] = Action.async(parse.json) { request =>
     request.body.validate[RoomCheckoutRequest].fold(
       errors => {
         val errorMessages = errors.map { case (path, validationErrors) =>
           s"${path.toString()}: ${validationErrors.map(_.message).mkString(", ")}"
-        }
+        }.mkString("; ")
+        logger.warn(s"Invalid checkout request: $errorMessages")
         Future.successful(BadRequest(Json.obj("message" -> "Invalid data", "errors" -> errorMessages)))
       },
       checkoutRequest => {
-        val roomNo = checkoutRequest.roomNo
+        val room_no = checkoutRequest.room_no
+        logger.info(s"Checking out room number: $room_no")
 
-        for {
-          // Step 1: Retrieve all guests for the specified room number
-          guests <- guestRepository.findGuestsByRoomNo(roomNo)
+        val checkoutTransaction = for {
+          guests <- guestRepository.findGuestsByRoomNo(room_no)
+          _ <- Future.sequence(guests.map(guest => guestRepository.updateGuestStatus(guest.guest_id, "INACTIVE")))
+          _ <- roomRepository.updateRoomStatusByRoomNo(room_no, "AVAILABLE")
+        } yield guests
 
-          // Step 2: Update guestStatus to "INACTIVE" for all guests in the room
-          _ <- Future.sequence(guests.map(guest => guestRepository.updateGuestStatus(guest.guestId, "INACTIVE")))
-
-          // Step 3: Update room status to "AVAILABLE"
-          _ <- roomRepository.updateRoomStatusByRoomNo(roomNo, "AVAILABLE")
-
-        } yield Ok(Json.obj("message" -> "Room checked out successfully"))
+        checkoutTransaction.map { guests =>
+          logger.info(s"Room $room_no checked out successfully for ${guests.size} guests.")
+          Ok(Json.obj("message" -> "Room checked out successfully", "guest_count" -> guests.size))
+        }.recover { case ex =>
+          logger.error(s"Error checking out room $room_no", ex)
+          InternalServerError(Json.obj("message" -> "Room checkout failed"))
+        }
       }
     )
   }
 }
-
-
-

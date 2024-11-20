@@ -17,13 +17,13 @@ class MenuDAO @Inject()(dbConfigProvider: DatabaseConfigProvider)(implicit ec: E
   class MenuTable(tag: Tag) extends Table[Menu](tag, "menu") {
     def id = column[Int]("id", O.PrimaryKey)
 
-    def foodItem = column[String]("food_item")
+    def food_item = column[String]("food_item")
 
-    def foodType = column[String]("food_type")
+    def food_type = column[String]("food_type")
 
     def price = column[Double]("price")
 
-    def * = (id, foodItem, foodType, price) <> ((Menu.apply _).tupled, Menu.unapply)
+    def * = (id, food_item, food_type, price) <> ((Menu.apply _).tupled, Menu.unapply)
   }
 
   val menu = TableQuery[MenuTable]

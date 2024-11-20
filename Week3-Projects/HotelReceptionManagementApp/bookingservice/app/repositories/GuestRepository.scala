@@ -12,37 +12,37 @@ class GuestRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implic
   import profile.api._
 
   private class GuestTable(tag: Tag) extends Table[Guest](tag, "Guest") {
-    def guestId = column[Long]("guest_id", O.PrimaryKey, O.AutoInc)
+    def guest_id = column[Long]("guest_id", O.PrimaryKey, O.AutoInc)
     def name = column[String]("name")
-    def roomNo = column[Int]("room_no")
+    def room_no = column[Int]("room_no")
     def email = column[String]("email")
     def address = column[String]("address")
-    def idProof = column[Array[Byte]]("id_proof")
-    def guestStatus = column[String]("guest_status")
+    def id_proof = column[Array[Byte]]("id_proof")
+    def guest_status = column[String]("guest_status")
 
-    def * = (guestId, name, roomNo, email, address, idProof, guestStatus) <> ((Guest.apply _).tupled, Guest.unapply)
+    def * = (guest_id, name, room_no, email, address, id_proof, guest_status) <> ((Guest.apply _).tupled, Guest.unapply)
   }
 
   private val guests = TableQuery[GuestTable]
 
   // Method to add guests to the database
   def addGuestsAndReturnIds(guestList: Seq[Guest]): Future[Seq[Long]] = {
-    val addGuestsAction = guestList.map(guest => (guests returning guests.map(_.guestId)) += guest)
+    val addGuestsAction = guestList.map(guest => (guests returning guests.map(_.guest_id)) += guest)
     db.run(DBIO.sequence(addGuestsAction).transactionally)
   }
 
-  def findGuestsByRoomNo(roomNo: Int): Future[Seq[Guest]] = db.run {
-    guests.filter(_.roomNo === roomNo).result
+  def findGuestsByRoomNo(room_no: Int): Future[Seq[Guest]] = db.run {
+    guests.filter(_.room_no === room_no).result
   }
-  def updateGuestStatus(guestId: Long, status: String): Future[Int] = db.run {
-    guests.filter(_.guestId === guestId).map(_.guestStatus).update(status)
+  def updateGuestStatus(guest_id: Long, status: String): Future[Int] = db.run {
+    guests.filter(_.guest_id === guest_id).map(_.guest_status).update(status)
   }
 
-  def updateGuestsStatusByRoomNo(roomNo: Int, status: String): Future[Int] = db.run {
-    guests.filter(_.roomNo === roomNo).map(_.guestStatus).update(status)
+  def updateGuestsStatusByRoomNo(room_no: Int, status: String): Future[Int] = db.run {
+    guests.filter(_.room_no === room_no).map(_.guest_status).update(status)
   }
 
   def getActiveGuests: Future[Seq[Guest]] = db.run {
-    guests.filter(_.guestStatus === "ACTIVE").result
+    guests.filter(_.guest_status === "ACTIVE").result
   }
 }

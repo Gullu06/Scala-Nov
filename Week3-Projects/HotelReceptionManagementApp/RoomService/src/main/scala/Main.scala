@@ -11,6 +11,9 @@ import models.JsonFormats._
 import spray.json._
 
 object Main {
+  /**
+   * Compose a welcome email for the guest.
+   */
   private def composeMail(guestInfo: GuestInfo): Email = {
     val body: String = s"Welcome ${guestInfo.name},\n\n It gives us great pleasure to welcome you onboard. We would also like to thank you for choosing us for enhancing your experience." +
       s"Please dial +91-57738 to call the reception any room service, +91-567838 for ordering food." +
@@ -22,11 +25,13 @@ object Main {
   def main(args: Array[String]): Unit = {
     implicit val system: ActorSystem[_] = ActorSystem(Behaviors.empty, "HotelRoomServiceNotification")
 
+    // Kafka consumer settings
     val consumerSettings = ConsumerSettings(system, new StringDeserializer, new StringDeserializer)
       .withBootstrapServers(sys.env.get("BROKER_HOST").getOrElse("localhost")+":9092")
       .withGroupId("roomServiceGroup")
       .withProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest")
 
+    // Kafka consumer stream
     Consumer.plainSource(consumerSettings, Subscriptions.topics("hotel_receptions"))
       .map(record => {
         val guest = record.value().parseJson.convertTo[GuestInfo]
