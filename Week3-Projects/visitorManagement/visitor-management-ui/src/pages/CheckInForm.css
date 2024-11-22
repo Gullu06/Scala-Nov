@@ -1,0 +1,99 @@
+/* Full Page Background */
+body {
+    background-color: #001f3f;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wrapper for Form */
+.form-wrapper {
+    width: 100%;
+    max-width: 350px;
+    background: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin: 0 20px; /* Add left and right margin for responsiveness */
+}
+
+/* Form Title */
+h2 {
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4rem; /* Slightly smaller title font size */
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Fields */
+textarea,
+input[type="text"],
+input[type="file"] {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    color: #495057;
+    background-color: #f8f9fa;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 35px; /* Compact height */
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 70px;
+}
+
+textarea:focus,
+input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    background-color: #0056b3;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border: none;
+    transition: all 0.3s ease;
+    width: 100%; /* Full-width button */
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #003f8a;
+    box-shadow: 0px 6px 15px rgba(0, 91, 187, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-wrapper {
+        padding: 15px;
+        margin: 0 10px; /* Adjust margin for smaller screens */
+    }
+
+    button {
+        padding: 8px;
+    }
+}
