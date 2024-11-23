@@ -1,15 +1,18 @@
-# Routes
-# This file defines all application routes (Higher priority routes first)
-# https://www.playframework.com/documentation/latest/ScalaRouting
+# Routes file for the application with JWT-based security
 
-# Home page
-GET     /                           controllers.HomeController.index()
+# Public endpoints (do not require JWT)
+POST    /api/login              controllers.AuthController.login
 
-# Visitor check-in
+GET     /api/secured-endpoint   controllers.SecuredController.securedEndpoint
+
+# Visitor check-in (secured)
 POST    /checkin                    controllers.CheckInController.checkInVisitor()
 
-# Visitor check-out
-POST    /checkout                   controllers.CheckoutController.checkoutVisitor()
+# Visitor check-out (secured)
+POST    /checkout                   controllers.CheckOutController.checkoutVisitor()
 
-# Static assets
+# Home page (secured)
+GET     /                           controllers.HomeController.index()
+
+# Static assets (public access)
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
