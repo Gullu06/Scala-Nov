@@ -1,20 +1,29 @@
-# Use a Scala and sbt based image
-FROM hseeberger/scala-sbt:11.0.11_1.5.5_2.13.6
+# Use an official lightweight Scala and SBT image as a parent image
+FROM hseeberger/scala-sbt:11.0.13_1.6.1_2.13.7 as build
 
-# Set the working directory in the Docker image
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the entire project into the Docker image
+# Copy the current directory contents into the container at /app
 COPY . /app
 
-ENV BROKER_HOST = 34.16.199.130
-ENV BOOTSTRAP_SERVER=34.93.47.100:9092
-ENV auth_dets = "priyanshichouhan2908@gmail.com"
-ENV pass = "******"
-# Compile the Scala application
-RUN sbt compile
+# Compile and package the application
+RUN sbt clean compile stage
 
-# Command to run the application
-CMD ["sbt", "run"]
+# Use the OpenJDK image for running the application
+FROM openjdk:11-jre-slim
 
-# docker run -d -e BROKER_HOST=205.34.345.50 consumer-image
+# Copy the binary files from the previous stage
+COPY --from=build /app/target/universal/stage /app
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Make port 9000 available to the world outside this container
+EXPOSE 9000
+
+# Define environment variable
+ENV PLAY_HTTP_SECRET=thisisasecretfortheapplicationandwekeepittosecuretheapplicationletuscheckandithastoworkagain
+
+# Run the binary script when the container launches
+CMD ["./bin/restaurantservice", "-Dplay.http.secret.key=thisisasecretfortheapplicationandwekeepittosecuretheapplicationletuscheckandithastoworkagain"]

@@ -24,7 +24,6 @@ EXPOSE 9000
 
 # Define environment variable
 ENV PLAY_HTTP_SECRET=thisisasecretfortheapplicationandwekeepittosecuretheapplicationletuscheckandithastowork
-ENV BOOTSTRAP_SERVER=34.93.47.100:9092
+
 # Run the binary script when the container launches
 CMD ["./bin/bookingservice", "-Dplay.http.secret.key=thisisasecretfortheapplicationandwekeepittosecuretheapplicationletuscheckandithastowork"]
-
