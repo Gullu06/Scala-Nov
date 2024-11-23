@@ -4,6 +4,8 @@
 # ~~~~
 
 # An example controller showing a sample home page
+POST    /api/login              controllers.AuthController.login
+GET     /api/secured-endpoint   controllers.SecuredController.securedEndpoint
 GET     /                           controllers.HomeController.index()
 GET   /rooms/available/:room_type    controllers.RoomController.getAvailableRoomsByType(room_type: String)
 POST   /rooms/allocate              controllers.RoomController.allocateRoom

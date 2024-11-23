@@ -13,18 +13,10 @@ object MailUtil {
   properties.put("mail.smtp.auth", "true")
   properties.put("mail.smtp.starttls.enable", "true")
 
-  val authenticationMail = sys.env.get("auth_dets").getOrElse("priyanshichouhan2908@gmail.com")
-  val authenticationPass = sys.env.get("pass").getOrElse("imvv uvhc njwx wvdc")
-
   val session = Session.getInstance(properties, new Authenticator() {
     override protected def getPasswordAuthentication =
-      new PasswordAuthentication(authenticationMail, authenticationPass)
+      new PasswordAuthentication("priyanshichouhan2908@gmail.com", "zvgp vkrs wrcx ccvc")
   })
-
-//  val session = Session.getInstance(properties, new Authenticator() {
-//    override protected def getPasswordAuthentication =
-//      new PasswordAuthentication("priyanshichouhan2908@gmail.com", "imvv uvhc njwx wvdc")
-//  })
 
   def composeMail(guest: GuestInfo, menuList: Seq[Menu]): Email = {
     val listItems = menuList.map { menu =>
@@ -93,5 +85,3 @@ object MailUtil {
   }
 
 }
-
-
