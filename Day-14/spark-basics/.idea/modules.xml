@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spark-basics.iml" filepath="$PROJECT_DIR$/.idea/modules/spark-basics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spark-basics.spark-basics-build.iml" filepath="$PROJECT_DIR$/.idea/modules/spark-basics.spark-basics-build.iml" />
-    </modules>
-  </component>
-</project>
