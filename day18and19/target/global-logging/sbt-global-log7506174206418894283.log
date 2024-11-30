@@ -1,0 +1,88 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.10.6 (Homebrew Java 21.0.5)
+[debug] Load.defaultLoad until apply took 23.9815ms
+[debug]           Load.loadUnit: plugins took 18.45175ms
+[debug]           Load.loadUnit: defsScala took 0.052167ms
+[debug] [Loading] Scanning directory /Users/priyanshichouhan/bootcamp24/day18and19/project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/priyanshichouhan/bootcamp24/day18and19/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 4.258916 ms
+[debug]               Load.resolveProject(day18and19-build) took 13.028959ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id day18and19-build, base: /Users/priyanshichouhan/bootcamp24/day18and19/project, plugins: List(<none>))) took 24.416834ms
+[debug] [Loading] Done in /Users/priyanshichouhan/bootcamp24/day18and19/project, returning: (day18and19-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 29.617625ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.05125ms
+[debug]         Load.loadUnit(file:/Users/priyanshichouhan/bootcamp24/day18and19/project/, ...) took 49.50825ms
+[debug]       Load.apply: load took 254.912166ms
+[debug]       Load.apply: resolveProjects took 1.979875ms
+[debug]       Load.apply: finalTransforms took 20.489792ms
+[debug]       Load.apply: config.delegates took 1.754375ms
+[debug]       Load.apply: Def.make(settings)... took 113.116041ms
+[debug]       Load.apply: structureIndex took 30.905834ms
+[debug]       Load.apply: mkStreams took 0.479791ms
+[info] loading project definition from /Users/priyanshichouhan/bootcamp24/day18and19/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 749.624417ms
+[debug]     Load.loadUnit: defsScala took 0.00125ms
+[debug] [Loading] Scanning directory /Users/priyanshichouhan/bootcamp24/day18and19
+[debug]       Load.loadUnit: mkEval took 1.961ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 0.628584 ms
+[info] loading settings for project root from build.sbt...
+[debug]         Load.resolveProject(root) took 0.753792ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: /Users/priyanshichouhan/bootcamp24/day18and19, plugins: List(<none>))) took 1.668375ms
+[debug] [Loading] Done in /Users/priyanshichouhan/bootcamp24/day18and19, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 800.429709ms
+[debug]     Load.loadUnit: cleanEvalClasses took 2.606208ms
+[debug]   Load.loadUnit(file:/Users/priyanshichouhan/bootcamp24/day18and19/, ...) took 1553.076ms
+[debug] Load.apply: load took 1557.018375ms
+[debug] Load.apply: resolveProjects took 0.041333ms
+[debug] Load.apply: finalTransforms took 4.603458ms
+[debug] Load.apply: config.delegates took 0.148667ms
+[debug] Load.apply: Def.make(settings)... took 33.944292ms
+[debug] Load.apply: structureIndex took 11.316042ms
+[debug] Load.apply: mkStreams took 0.002209ms
+[info] set current project to Day18AndDay19 (in build file:/Users/priyanshichouhan/bootcamp24/day18and19/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(shell, None, None)
+[info] sbt server started at local:///Users/priyanshichouhan/.sbt/1.0/server/de6be57ce97d67ba4ac4/sock
+[debug] Writing bsp connection file
+[info] started sbt server
