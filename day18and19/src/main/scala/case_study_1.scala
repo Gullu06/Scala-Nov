@@ -1,5 +1,3 @@
-package case_study_1
-
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions.broadcast
 
