@@ -68,7 +68,7 @@ object SparkConsumer {
       .outputMode("append")
       .format("json")
       .option("path", outputPath)
-      .option("jsonPath", "gs://priyanshi-bucket/cs5/jsonPath/")
+      .option("checkpointLocation", "gs://priyanshi-bucket/cs5/checkpoints/")
       .trigger(Trigger.ProcessingTime("30 seconds"))
       .start()
 
