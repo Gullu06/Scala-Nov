@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65c05768-eebd-4638-9e71-384379591a8d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/src/main/scala/Question1.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-14/spark-basics/src/main/scala/Question1.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/_global/_global/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/_global/scalaCompilerBridgeScope/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/_global/update/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/_global/update/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/compile/bspReporter/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/compile/compile/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/compile/compileIncremental/_global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/compile/dependencyClasspath/_global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/compile/internalDependencyClasspath/_global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-14/spark-basics/target/streams/compile/internalDependencyClasspath/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/.idea/modules/Day18AndDay19.Day18AndDay19-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/.idea/modules/Day18AndDay19.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/.idea/modules/SparkPlayground.SparkPlayground-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/.idea/modules/SparkPlayground.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/.idea/scala_compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/project/target/config-classes/$f9813ad9f06b8c02986f$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/project/target/config-classes/$f9813ad9f06b8c02986f.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/project/target/config-classes/$f9813ad9f06b8c02986f.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/project/target/streams/_global/update/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/project/target/streams/_global/update/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/project/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/project/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/project/target/streams/compile/copyResources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/project/target/streams/compile/copyResources/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/project/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/project/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/target/scala-2.12/classes/AnalyzingTaskAndExecutor$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/target/scala-2.12/classes/AnalyzingTaskAndExecutor$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/target/scala-2.12/classes/DAGExploration$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/target/scala-2.12/classes/DAGExploration$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/target/scala-2.12/classes/PartitioningImpact$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/target/scala-2.12/classes/PartitioningImpact$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day-15/target/streams/_global/_global/csrLogger/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-15/target/streams/_global/_global/csrLogger/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/.idea/modules/RoomService.RoomService-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/.idea/modules/RoomService.RoomService-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/.idea/modules/RoomService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/.idea/modules/RoomService.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$1662bb330cb2ad682bce$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$1662bb330cb2ad682bce.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$1662bb330cb2ad682bce.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$38bc48800caf6275fcd4$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$38bc48800caf6275fcd4.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$38bc48800caf6275fcd4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$4b7e910407cd4bc81a93$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$4b7e910407cd4bc81a93.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$4b7e910407cd4bc81a93.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$4d0d15a79fd321e85c03$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$4d0d15a79fd321e85c03.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$4d0d15a79fd321e85c03.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$4d32228bf7e8d3ba7c69$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$4d32228bf7e8d3ba7c69.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$4d32228bf7e8d3ba7c69.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$54c6a452545f72d0e3df$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$54c6a452545f72d0e3df.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$54c6a452545f72d0e3df.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$7c4bb24119ab716cdcc4$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$7c4bb24119ab716cdcc4.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$7c4bb24119ab716cdcc4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$ab87f149404a0fa9b5d2$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$ab87f149404a0fa9b5d2.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/config-classes/$ab87f149404a0fa9b5d2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/compile/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/compile/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/runtime/dependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/runtime/dependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/runtime/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/runtime/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/runtime/fullClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/runtime/fullClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/runtime/internalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/project/target/streams/runtime/internalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/src/main/scala/actors/MailSenderActor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/src/main/scala/actors/MailSenderActor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/Main$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/actors/MailSenderActor$$anon$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/actors/MailSenderActor$$anonfun$receive$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/actors/MailSenderActor$$anonfun$receive$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/actors/MailSenderActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/actors/MailSenderActor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/actors/MailSenderActorSystem$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/actors/MailSenderActorSystem$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/actors/MailSenderActorSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/scala-2.13/classes/actors/MailSenderActorSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/streams/_global/_global/dumpStructure/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/streams/_global/_global/dumpStructure/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/RoomService/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/.idea/modules/WifiService.WifiService-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/.idea/modules/WifiService.WifiService-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/.idea/modules/WifiService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/.idea/modules/WifiService.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$0c2c311b2611d11cb00a$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$0c2c311b2611d11cb00a.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$0c2c311b2611d11cb00a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$1f2437222c4265dc2f2b$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$1f2437222c4265dc2f2b.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$1f2437222c4265dc2f2b.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$2a3f5a4bf53a55ece574$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$2a3f5a4bf53a55ece574.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$2a3f5a4bf53a55ece574.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$2fb29257ceda3c19bddf$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$2fb29257ceda3c19bddf.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$2fb29257ceda3c19bddf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$359da263988f3af33c8e$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$359da263988f3af33c8e.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$359da263988f3af33c8e.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$51c1f6ad0625ec8443d5$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$51c1f6ad0625ec8443d5.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$51c1f6ad0625ec8443d5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$e623bf393c41982f2b2b$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$e623bf393c41982f2b2b.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/config-classes/$e623bf393c41982f2b2b.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/compile/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/compile/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/runtime/dependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/runtime/dependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/runtime/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/runtime/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/runtime/fullClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/runtime/fullClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/runtime/internalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/project/target/streams/runtime/internalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/src/main/scala/actors/WifiMailSender.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/src/main/scala/actors/WifiMailSender.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/scala-2.13/classes/actors/MailSenderActorSystem$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/scala-2.13/classes/actors/MailSenderActorSystem$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/scala-2.13/classes/actors/MailSenderActorSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/scala-2.13/classes/actors/MailSenderActorSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/scala-2.13/classes/actors/WifiMailSender$$anon$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/scala-2.13/classes/actors/WifiMailSender$$anonfun$receive$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/scala-2.13/classes/actors/WifiMailSender$$anonfun$receive$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/scala-2.13/classes/actors/WifiMailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/scala-2.13/classes/actors/WifiMailSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/WifiService/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/bookingservice/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/bookingservice/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/target/scala-2.12/update/update_cache_2.12/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/target/scala-2.12/update/update_cache_2.12/inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/HotelReceptionManagementApp/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/.idea/modules/notificationService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/.idea/modules/notificationService.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/.idea/modules/notificationService.notificationService-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/.idea/modules/notificationService.notificationService-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/compile/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/compile/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/runtime/dependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/runtime/dependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/runtime/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/runtime/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/runtime/fullClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/runtime/fullClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/runtime/internalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/project/target/streams/runtime/internalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/src/main/scala/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/src/main/scala/actor/MailSenderActor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/src/main/scala/actor/MailSenderActor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/target/scala-2.13/classes/actors/MailSenderActor$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/target/scala-2.13/classes/actors/MailSenderActor$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/target/streams/_global/_global/dumpStructure/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/target/streams/_global/_global/dumpStructure/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/notification-microservice/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitor-management-ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitor-management-ui/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitor-management-ui/src/pages/CheckInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitor-management-ui/src/pages/CheckInForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitor-management-ui/src/services/visitorService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitor-management-ui/src/services/visitorService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitor-management-ui/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitor-management-ui/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/controllers/AuthController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/controllers/AuthController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/controllers/CheckOutController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/controllers/CheckOutController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/producers/NotificationProducer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/producers/NotificationProducer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/security/JwtAuthFilter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/security/JwtAuthFilter.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/services/NotificationService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/app/services/NotificationService.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/conf/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week3-Projects/visitorManagement/visitormanagementservice/conf/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.idea/modules/Day18AndDay19.Day18AndDay19-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/.idea/modules/Day18AndDay19.Day18AndDay19-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.idea/modules/Day18AndDay19.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/.idea/modules/Day18AndDay19.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.idea/modules/SparkPlayground.SparkPlayground-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.idea/modules/SparkPlayground.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.idea/modules/day18and19.day18and19-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.idea/modules/day18and19.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/.idea/scala_compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/project/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/project/build.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/src/main/scala/case_study_4/case_study_4.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/src/main/scala/case_study_4/case_study_4.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/target/scala-2.12/update/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/target/scala-2.12/update/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/target/streams/_global/_global/csrLogger/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/target/streams/_global/_global/csrLogger/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/target/streams/_global/updateClassifiers/_global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/target/streams/_global/updateClassifiers/_global/streams/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/target/streams/compile/externalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/target/streams/compile/externalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/target/streams/compile/managedClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/target/streams/compile/managedClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/target/streams/runtime/externalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/target/streams/runtime/externalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/target/streams/runtime/managedClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/target/streams/runtime/managedClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/target/streams/test/externalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/target/streams/test/externalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day18and19/target/streams/test/managedClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../../day18and19/target/streams/test/managedClasspath/_global/streams/export" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="optimizing_real_time_data_processing" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;priyanshichouhan0601&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/priyanshichouhan0601/Scala-Nov.git&quot;,
+    &quot;accountId&quot;: &quot;cfd5f545-6300-42a1-a9c6-7d5026e85d22&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ppnsJO9ytpPBFJkjtbGCLHnAR9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.KafkaProducer.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.SalesDataIngestionService.executor": "Run",
+    "Application.SparkConsumer.executor": "Run",
+    "Application.WeeklySalesProducer.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.28125",
+    "project.structure.side.proportion": "0.24114442",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="KafkaProducer" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="KafkaProducer" />
+      <module name="optimizing_real_time_data_processing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" activateToolWindowBeforeRun="false" temporary="true">
+      <envs>
+        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="$USER_HOME$/Documents/creds/spark-gcs.json" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="optimizing_real_time_data_processing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SalesDataIngestionService" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="SalesDataIngestionService" />
+      <module name="optimizing_real_time_data_processing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SparkConsumer" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="SparkConsumer" />
+      <module name="optimizing_real_time_data_processing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeeklySalesProducer" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="WeeklySalesProducer" />
+      <module name="optimizing_real_time_data_processing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.SalesDataIngestionService" />
+        <item itemvalue="Application.WeeklySalesProducer" />
+        <item itemvalue="Application.KafkaProducer" />
+        <item itemvalue="Application.SparkConsumer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ScalaProjectSettings">
+    <option name="migrateConfigurationsNotificationShown" value="true" />
+    <option name="scala3DisclaimerShown" value="true" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65c05768-eebd-4638-9e71-384379591a8d" name="Changes" comment="" />
+      <created>1733472090753</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733472090753</updated>
+      <workItem from="1733472091675" duration="2555000" />
+      <workItem from="1733475684036" duration="2151000" />
+      <workItem from="1733477861987" duration="13386000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
