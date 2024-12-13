@@ -1,0 +1,34 @@
+userId,age,gender,location
+34,19,Male,Chicago
+35,20,Other,Los Angeles
+36,47,Male,San Francisco
+37,44,Male,New York
+38,53,Other,New York
+39,36,Female,Los Angeles
+40,41,Male,Chicago
+41,38,Female,New York
+42,60,Other,San Francisco
+43,54,Female,Seattle
+44,18,Female,New York
+45,37,Other,Chicago
+46,44,Other,Seattle
+47,43,Male,Seattle
+48,28,Male,New York
+49,48,Female,Los Angeles
+50,57,Other,Chicago
+51,31,Male,San Francisco
+52,58,Female,Seattle
+53,32,Female,Chicago
+54,24,Female,Chicago
+55,25,Female,Chicago
+56,44,Female,Chicago
+57,27,Female,Chicago
+58,41,Male,San Francisco
+59,30,Other,Los Angeles
+60,19,Other,Seattle
+61,59,Female,Seattle
+62,51,Male,Chicago
+63,52,Male,Seattle
+64,36,Female,Los Angeles
+65,43,Other,Chicago
+66,35,Female,Chicago
