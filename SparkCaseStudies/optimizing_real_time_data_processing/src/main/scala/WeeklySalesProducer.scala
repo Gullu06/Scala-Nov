@@ -16,8 +16,8 @@ object WeeklySalesProducer {
     val kafkaProducer = new KafkaProducer[String, String](producerProps)
     val randomGenerator = new Random()
 
-    val storeIds = (1 to 50).map(i => f"store_$i%03d")
-    val deptIds = (1 to 10).map(i => f"dept_$i%02d")
+    val storeIds = (1 to 50).map(_.toString)
+    val deptIds = (1 to 10).map(_.toString)
 
     try {
       while (true) {

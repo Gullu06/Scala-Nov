@@ -1,20 +1,21 @@
-import org.apache.spark.sql.{SparkSession, DataFrame}
+import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
+import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.functions._
 import org.apache.spark.storage.StorageLevel
 
 object Main {
   def main(args: Array[String]): Unit = {
-
-    println("Starting the Spark application")
-
     val spark = SparkSession.builder()
       .appName("Sales Performance Analysis")
+      .config("spark.hadoop.fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem")
+      .config("spark.hadoop.fs.AbstractFileSystem.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS")
+      .config("spark.hadoop.google.cloud.auth.service.account.enable", "true")
       .master("local[*]")
       .getOrCreate()
 
-    spark.sparkContext.setLogLevel("ERROR")
+    spark.sparkContext.setLogLevel("WARN")
 
-    // Step 1: Load Datasets
+    // Load data
     val trainDF = loadCSV(spark, "gs://walmart_recruiting_data_bucket/train.csv")
     val featuresDF = loadCSV(spark, "gs://walmart_recruiting_data_bucket/features.csv")
     val storesDF = loadCSV(spark, "gs://walmart_recruiting_data_bucket/stores.csv")
@@ -29,7 +30,6 @@ object Main {
 
     // Step 4: Enrich Data
     val enrichedDF = enrichSalesData(positiveSalesDF, cleanedFeaturesDF, broadcastStoresDF).persist(StorageLevel.MEMORY_AND_DISK)
-
     // Step 5: Aggregations
     computeStoreLevelMetrics(enrichedDF, "gs://walmart_recruiting_data_bucket/store_metrics/")
     computeDepartmentMetrics(enrichedDF, "gs://walmart_recruiting_data_bucket/department_metrics/")
@@ -38,10 +38,8 @@ object Main {
     // Step 6: Storage Optimization
     saveEnrichedData(enrichedDF, "gs://walmart_recruiting_data_bucket/enriched_data/")
 
-    // Step 7: Start Real-Time Kafka Consumer
-    SalesDataIngestionService.main(Array.empty)
-
-    println("Application completed successfully")
+    println("Data aggregation and metrics computation completed successfully")
+    spark.stop()
   }
 
   // Load CSV
@@ -61,7 +59,6 @@ object Main {
         col("Fuel_Price").isNotNull
     ).withColumnRenamed("IsHoliday", "Features_IsHoliday")
   }
-
   // Clean Stores Data
   def cleanStores(storesDF: DataFrame): DataFrame = {
     storesDF.filter(
@@ -88,9 +85,7 @@ object Main {
       .join(featuresDF, Seq("Store", "Date"), "inner")
       .join(storesDF, Seq("Store"), "inner")
       .repartition(col("Store"), col("Date"))
-  }
-
-  // Compute Store-Level Metrics
+  }// Compute Store-Level Metrics
   def computeStoreLevelMetrics(enrichedDF: DataFrame, outputPath: String): Unit = {
     val storeMetricsDF = enrichedDF.groupBy("Store")
       .agg(
@@ -123,26 +118,26 @@ object Main {
     departmentMetricsDF.unpersist()
   }
 
-  // Compute Holiday Metrics
-  def computeHolidayMetrics(enrichedDF: DataFrame, outputPath: String): Unit = {
-    val holidayMetricsDF = enrichedDF.groupBy("Dept", "IsHoliday")
-      .agg(
-        sum("Weekly_Sales").as("Total_Weekly_Sales"),
-        avg("Weekly_Sales").as("Average_Weekly_Sales")
-      )
-      .withColumn(
-        "Holiday_Type",
-        when(col("IsHoliday"), "Holiday").otherwise("Non-Holiday")
-      )
-      .drop("IsHoliday")
-      .cache()
+// Compute Holiday Metrics
+def computeHolidayMetrics(enrichedDF: DataFrame, outputPath: String): Unit = {
+  val holidayMetricsDF = enrichedDF.groupBy("Dept", "IsHoliday")
+    .agg(
+      sum("Weekly_Sales").as("Total_Weekly_Sales"),
+      avg("Weekly_Sales").as("Average_Weekly_Sales")
+    )
+    .withColumn(
+      "Holiday_Type",
+      when(col("IsHoliday"), "Holiday").otherwise("Non-Holiday")
+    )
+    .drop("IsHoliday")
+    .cache()
 
-    holidayMetricsDF.write
-      .mode("overwrite")
-      .json(outputPath)
+  holidayMetricsDF.write
+    .mode("overwrite")
+    .json(outputPath)
 
-    holidayMetricsDF.unpersist()
-  }
+  holidayMetricsDF.unpersist()
+}
 
   // Save Enriched Data
   def saveEnrichedData(enrichedDF: DataFrame, outputPath: String): Unit = {
